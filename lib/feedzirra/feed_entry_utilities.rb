@@ -36,14 +36,6 @@ module Feedzirra
       @updated = parsed if !@updated || parsed > @updated
     end
 
-    def sanitize!
-      self.title.sanitize! if self.title
-      self.author.sanitize! if self.author
-      self.summary.sanitize! if self.summary
-      self.content.sanitize! if self.content
-      self.image.sanitize! if self.image
-    end
-
     alias_method :last_modified, :published
 
     def each
